@@ -1,9 +1,13 @@
 function postComment() {
   var commenter = document.getElementById("commenterName").value;
   var comment = document.getElementById("commentText").value;
+  /* === OLD CODE ===
   //insert comment into "comments" div in this format:
-  //<div class="comment"><p>comment</p><p>Posted By: <span class="commenter">commenter</span></p></div>
+  <div class="comment"><p>comment</p><p>Posted By: <span class="commenter">commenter</span></p></div>
   var commentTemplate = '<div class="comment"><p><%= comment %></p><p>Posted By: <span class="commenter"><%= commenter %></span></p></div>';
+  */
+  //create template string
+  var commentTemplate = document.getElementById("comment-template").innerHTML;
   //create template function
   var templateFn = _.template(commentTemplate);
 
